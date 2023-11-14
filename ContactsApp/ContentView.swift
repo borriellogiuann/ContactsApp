@@ -34,6 +34,7 @@ struct ContentView: View {
                     }
                 }
             }
+            .navigationTitle("Contacts")
         } detail: {
             Text("Select an item")
         }
