@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC3375272B04D23A00E75212 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3375262B04D23A00E75212 /* ModalView.swift */; };
 		BCE988502B037F470008D40E /* ContactsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE9884F2B037F470008D40E /* ContactsAppApp.swift */; };
 		BCE988522B037F470008D40E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE988512B037F470008D40E /* ContentView.swift */; };
 		BCE988542B037F470008D40E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE988532B037F470008D40E /* Item.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC3375262B04D23A00E75212 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		BCE9884C2B037F470008D40E /* ContactsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE9884F2B037F470008D40E /* ContactsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsAppApp.swift; sourceTree = "<group>"; };
 		BCE988512B037F470008D40E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				BCE9884F2B037F470008D40E /* ContactsAppApp.swift */,
 				BCE988512B037F470008D40E /* ContentView.swift */,
+				BC3375262B04D23A00E75212 /* ModalView.swift */,
 				BCE988532B037F470008D40E /* Item.swift */,
 				BCE988552B037F470008D40E /* Assets.xcassets */,
 				BCE988572B037F470008D40E /* Preview Content */,
@@ -142,6 +145,7 @@
 			files = (
 				BCE988522B037F470008D40E /* ContentView.swift in Sources */,
 				BCE988542B037F470008D40E /* Item.swift in Sources */,
+				BC3375272B04D23A00E75212 /* ModalView.swift in Sources */,
 				BCE988502B037F470008D40E /* ContactsAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

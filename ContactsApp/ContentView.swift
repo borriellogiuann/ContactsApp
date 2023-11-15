@@ -10,41 +10,44 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @State private var searchBar = ""
+    @Query private var contacts: [Contact]
+    @State private var isModalPresented = false
 
+    var filteredContacts: [Contact] {
+        guard searchBar.isEmpty else { return contacts }
+        return contacts.filter {$0.name.localizedCaseInsensitiveContains(searchBar)}
+    }
+    
     var body: some View {
-        NavigationSplitView {
+        NavigationView {
             List {
-                ForEach(items) { item in
+                ForEach(contacts) { contact in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        Text("Item at \(contact.name)")
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Text(contact.name)
                     }
                 }
             }
             .toolbar {
                 ToolbarItem {
-                    Button(action: addItem) {
+                    Button(action: {
+                        isModalPresented.toggle()
+                    }) {
                         Label("Add Item", systemImage: "plus")
+                    }.sheet(isPresented: $isModalPresented) {
+                        ModalView(isPresented: $isModalPresented)
                     }
                 }
             }
             .navigationTitle("Contacts")
-        } detail: {
-            Text("Select an item")
-        }
-    }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+            .searchable(text: $searchBar, prompt: "Search")
         }
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Contact.self, inMemory: true)
 }
