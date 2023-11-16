@@ -6,30 +6,40 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ModalView: View {
+    @Environment(\.modelContext) private var modelContext
+    
     @Binding var isPresented: Bool
-    @State private var newName = ""
-    @State private var newPhoneNumber = ""
+    
+    @Query private var contacts: [Contact]
+    
+    @State private var firstName = ""
     
     var body: some View {
         NavigationView {
-            Form {
-                Section {
-                    TextField("First Name", text: $newName)
-                    TextField("Phone Number", text: $newPhoneNumber)
+            VStack {
+                Form {
+                    TextField("First Name", text: $firstName)
                 }
             }
             .navigationBarTitle("New Contact", displayMode: .inline)
             .navigationBarItems(
-                leading: Button("Dismiss") {
+                leading: Button("Cancel") {
                     isPresented = false
                 },
                 trailing: Button("Done") {
                     isPresented = false
-                }
-            )
+                    addContact()
+                })
         }
+    }
+    
+    func addContact() {
+        let item = Contact(firstName: firstName)
+        item.firstName = firstName
+        modelContext.insert(item)
     }
 }
 

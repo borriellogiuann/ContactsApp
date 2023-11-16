@@ -9,10 +9,13 @@ import Foundation
 import SwiftData
 
 @Model
-final class Contact {
-    var name: String
+final class Contact: Identifiable {
+    var id: String
+    var firstName: String
     
-    init(name: String) {
-        self.name = ""
+    init(firstName: String) {
+        
+        self.id = UUID().uuidString
+        self.firstName = ""
     }
 }

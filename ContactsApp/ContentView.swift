@@ -9,27 +9,28 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    
     @Environment(\.modelContext) private var modelContext
-    @State private var searchBar = ""
+    
     @Query private var contacts: [Contact]
+    
+    @State private var searchBar = ""
     @State private var isModalPresented = false
-
+    
     var filteredContacts: [Contact] {
         guard searchBar.isEmpty else { return contacts }
-        return contacts.filter {$0.name.localizedCaseInsensitiveContains(searchBar)}
+        return contacts.filter {$0.firstName.localizedCaseInsensitiveContains(searchBar)}
     }
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(contacts) { contact in
-                    NavigationLink {
-                        Text("Item at \(contact.name)")
-                    } label: {
-                        Text(contact.name)
-                    }
+                    Text(contact.firstName)
                 }
             }
+            .navigationTitle("Contacts")
+            .searchable(text: $searchBar, prompt: "Search")
             .toolbar {
                 ToolbarItem {
                     Button(action: {
@@ -41,8 +42,6 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle("Contacts")
-            .searchable(text: $searchBar, prompt: "Search")
         }
     }
 }
