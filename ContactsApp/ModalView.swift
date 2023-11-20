@@ -25,13 +25,11 @@ struct ModalView: View {
             VStack {
                 Form {
                     Section{
-                        TextField("First Name", text: $firstName)}
+                        TextField("First Name", text: $firstName)
+                        TextField("Last Name", text: $lastName)
+                        TextField("Company", text: $company)}
                     Section{
-                        TextField("Last Name", text: $lastName)}
-                    Section{
-                    TextField("Company", text: $company)}
-                    Section{
-                TextField("Telephone", text: $telephone)}
+                        TextField("Telephone", text: $telephone)}
                 }
             }
             .navigationBarTitle("New Contact", displayMode: .inline)

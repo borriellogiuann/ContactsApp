@@ -13,7 +13,7 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     
     @Query private var contacts: [Contact]
-
+    
     @State private var searchBar = ""
     @State private var isModalPresented = false
     
@@ -49,9 +49,12 @@ struct ContentView: View {
                 .padding(.leading, 20)
                 
                 ForEach(contacts) { contact in
-                    NavigationLink(destination: ContactView(contact: contact)){
+                    NavigationLink(destination: ContactView(contact: contact),
+                                   label:{
                         Text("\(contact.firstName)\(" ")\(contact.lastName)")
                     }
+                    )
+                    .buttonStyle(PlainButtonStyle())
                 }
             }
             .listStyle(.plain)
