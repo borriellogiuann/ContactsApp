@@ -46,8 +46,8 @@ struct ContentView: View {
                         .padding()
                     }
                 }
-                
                 .padding(.leading, 20)
+                
                 ForEach(contacts) { contact in
                     NavigationLink(destination: ContactView(contact: contact)){
                         Text("\(contact.firstName)\(" ")\(contact.lastName)")

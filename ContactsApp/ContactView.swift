@@ -17,7 +17,3 @@ struct ContactView: View {
         Text("\(contact.telephone)")
     }
 }
-
-//#Preview {
-//    ContactView()
-//}
