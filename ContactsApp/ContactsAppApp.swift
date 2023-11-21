@@ -10,6 +10,7 @@ import SwiftData
 
 @main
 struct ContactsAppApp: App {
+    
     var body: some Scene {
         WindowGroup {
                 ContentView()

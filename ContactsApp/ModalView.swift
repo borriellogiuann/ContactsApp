@@ -9,6 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct ModalView: View {
+    
     @Environment(\.modelContext) private var modelContext
     
     @Binding var isPresented: Bool
