@@ -30,11 +30,10 @@ struct ContentView: View {
         NavigationView {
             VStack{
                 HStack {
-                    Image(systemName: "person.fill")
+                    Image("Image")
                         .resizable()
-                        .frame(width: 40.0, height: 40.0)
-                        .clipShape(Circle())
-                    
+                        .frame(width: 80.0, height: 80.0)
+                        .clipShape(Circle())                    
                     VStack(alignment: .leading) {
                         Text("Giovanni Borriello")
                             .font(.title3)
@@ -70,7 +69,7 @@ struct ContentView: View {
                             ModalView(isPresented: $isModalPresented)
                         }
                     }
-                }            .searchable(text: $searchBar, prompt: "Search")
+                }.searchable(text: $searchBar, prompt: "Search")
             }
         }
     }
