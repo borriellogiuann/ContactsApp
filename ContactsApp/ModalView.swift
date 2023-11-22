@@ -24,13 +24,31 @@ struct ModalView: View {
     var body: some View {
         NavigationView {
             VStack {
+                    VStack {
+                        Image(systemName: "person.crop.circle.fill")
+                            .resizable()
+                            .frame(width: 175, height: 175)
+                            .padding(.bottom, 10)
+                            .foregroundStyle(.white, CustomColor.Gray1)
+                        Button("Add Photo"){}
+                            .foregroundStyle(.white)
+                            .padding(.trailing, 20)
+                            .padding(.leading, 20)
+                            .padding(.top, 7)
+                            .padding(.bottom, 7)
+                            .background(CustomColor.Gray2)
+                            .cornerRadius(20)
+                            .bold()
+                    }
                 Form {
-                    Section{
+                    Section {
                         TextField("First Name", text: $firstName)
                         TextField("Last Name", text: $lastName)
-                        TextField("Company", text: $company)}
-                    Section{
-                        TextField("Telephone", text: $telephone)}
+                        TextField("Company", text: $company)
+                    }
+                    Section {
+                        TextField("Telephone", text: $telephone)
+                    }
                 }
             }
             .navigationBarTitle("New Contact", displayMode: .inline)

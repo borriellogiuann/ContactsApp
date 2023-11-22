@@ -32,8 +32,9 @@ struct ContentView: View {
                 HStack {
                     Image("Image")
                         .resizable()
-                        .frame(width: 80.0, height: 80.0)
-                        .clipShape(Circle())                    
+                        .frame(width: 60.0, height: 60.0)
+                        .background(CustomColor.Gray3)
+                        .clipShape(Circle())
                     VStack(alignment: .leading) {
                         Text("Giovanni Borriello")
                             .font(.title3)
@@ -47,8 +48,7 @@ struct ContentView: View {
                     }
                     .padding()
                 }
-                
-                .padding(.leading, 20)
+                .padding(.leading, -100)
                 List {
                     ForEach(filteredContacts) { contact in
                         NavigationLink(destination: ContactView(contact: contact)) {

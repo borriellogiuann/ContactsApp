@@ -13,6 +13,7 @@ struct CustomColor {
     static let Gray2 = Color("gray2")
     static let Gray3 = Color("gray3")
 }
+
 struct ContactView: View {
     
     @Environment(\.modelContext) private var modelContext
@@ -32,6 +33,8 @@ struct ContactView: View {
                     .frame(width: 200, height: 200)
                 Text("\(contact.firstName) \(contact.lastName)")
                     .font(.largeTitle)
+                    .foregroundStyle(.white)
+                    .bold()
                 HStack {
                     ZStack {
                         Rectangle()
@@ -41,7 +44,7 @@ struct ContactView: View {
                             Image(systemName: "message.fill")
                             Button("message") {}
                         }.padding(5)
-                    }.frame(width: 83, height: 60)
+                    }.frame(width: 84, height: 60)
                         .foregroundStyle(Color.white)
                     ZStack {
                         Rectangle()
@@ -51,7 +54,7 @@ struct ContactView: View {
                             Image(systemName: "phone.fill")
                             Button("call") {}
                         }.padding(5)
-                    }.frame(width: 83, height: 60)
+                    }.frame(width: 84, height: 60)
                         .foregroundStyle(Color.white)
                     ZStack {
                         Rectangle()
@@ -61,7 +64,7 @@ struct ContactView: View {
                             Image(systemName: "video.fill")
                             Button("video") {}
                         }.padding(5)
-                    }.frame(width: 83, height: 60)
+                    }.frame(width: 84, height: 60)
                         .foregroundStyle(Color.white)
                     ZStack {
                         Rectangle()
@@ -71,14 +74,15 @@ struct ContactView: View {
                             Image(systemName: "envelope.fill")
                             Button("mail") {}
                         }.padding(5)
-                    }.frame(width: 83, height: 60)
+                    }.frame(width: 84, height: 60)
                         .foregroundStyle(Color.white)
                 }
+                .padding(.bottom, 15)
             }
         }
         Spacer()
         
-        List{
+        List {
             Section {
                 HStack {
                     Image(systemName: "person.fill")
