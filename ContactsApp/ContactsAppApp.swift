@@ -13,8 +13,9 @@ struct ContactsAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-                ContentView()
-            .modelContainer(for: Contact.self)
+            ContentView()
+                .modelContainer(for: Contact.self)
+                .environment(\.accessibilityEnabled, true)
         }
     }
 }
