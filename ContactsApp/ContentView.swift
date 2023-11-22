@@ -28,49 +28,51 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack{
-                HStack {
-                    Image("Image")
-                        .resizable()
-                        .frame(width: 60.0, height: 60.0)
-                        .background(CustomColor.Gray3)
-                        .clipShape(Circle())
-                    VStack(alignment: .leading) {
-                        Text("Giovanni Borriello")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                            .bold()
-                        Text("My Card")
-                            .fontWeight(.regular)
-                            .font(.callout)
-                            .foregroundColor(Color(red: 0.357, green: 0.357, blue: 0.357))
-                            .multilineTextAlignment(.leading)
-                    }
-                    .padding()
-                }
-                .padding(.leading, -100)
-                List {
+            List {
+                Section {
                     ForEach(filteredContacts) { contact in
                         NavigationLink(destination: ContactView(contact: contact)) {
                             Text("\(contact.firstName) \(contact.lastName)")
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
-                }
-                .listStyle(.plain)
-                .navigationTitle("Contacts")
-                .toolbar {
-                    ToolbarItem {
-                        Button(action: {
-                            isModalPresented.toggle()
-                        }) {
-                            Label("Add Item", systemImage: "plus")
-                        }.sheet(isPresented: $isModalPresented) {
-                            ModalView(isPresented: $isModalPresented)
+                } header: {
+                    HStack {
+                        Image("Image")
+                            .resizable()
+                            .frame(width: 60.0, height: 60.0)
+                            .background(CustomColor.Gray3)
+                            .clipShape(Circle())
+                        VStack(alignment: .leading) {
+                            Text("Giovanni Borriello")
+                                .font(.title3)
+                                .fontWeight(.semibold)
+                                .foregroundStyle(.white)
+                                .bold()
+                            Text("My Card")
+                                .fontWeight(.regular)
+                                .font(.callout)
+                                .foregroundColor(Color(red: 0.357, green: 0.357, blue: 0.357))
+                                .multilineTextAlignment(.leading)
                         }
+                        .padding()
+                        
                     }
-                }.searchable(text: $searchBar, prompt: "Search")
+                }
             }
+            .listStyle(.plain)
+            .navigationTitle("Contacts")
+            .toolbar {
+                ToolbarItem {
+                    Button(action: {
+                        isModalPresented.toggle()
+                    }) {
+                        Label("Add Item", systemImage: "plus")
+                    }.sheet(isPresented: $isModalPresented) {
+                        ModalView(isPresented: $isModalPresented)
+                    }
+                }
+            }.searchable(text: $searchBar, prompt: "Search")
         }
     }
 }

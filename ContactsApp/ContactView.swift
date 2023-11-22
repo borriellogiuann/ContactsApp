@@ -35,47 +35,67 @@ struct ContactView: View {
                     .font(.largeTitle)
                     .foregroundStyle(.white)
                     .bold()
+                
                 HStack {
+                    
                     ZStack {
                         Rectangle()
                             .cornerRadius(5)
                             .foregroundColor(CustomColor.Gray1)
+                        
                         VStack {
                             Image(systemName: "message.fill")
+                                .accessibilityHidden(true)
                             Button("message") {}
-                        }.padding(5)
-                    }.frame(width: 84, height: 60)
-                        .foregroundStyle(Color.white)
+                        }
+                        .padding(5)
+                    }
+                    .frame(width: 84, height: 60)
+                    .foregroundStyle(Color.white)
+                    
                     ZStack {
                         Rectangle()
                             .cornerRadius(5)
                             .foregroundColor(CustomColor.Gray1)
+                        
                         VStack {
                             Image(systemName: "phone.fill")
+                                .accessibilityHidden(true)
                             Button("call") {}
-                        }.padding(5)
-                    }.frame(width: 84, height: 60)
-                        .foregroundStyle(Color.white)
+                        }
+                        .padding(5)
+                    }
+                    .frame(width: 84, height: 60)
+                    .foregroundStyle(Color.white)
+                    
                     ZStack {
                         Rectangle()
                             .cornerRadius(5)
                             .foregroundColor(CustomColor.Gray1)
+                        
                         VStack {
                             Image(systemName: "video.fill")
+                                .accessibilityHidden(true)
                             Button("video") {}
-                        }.padding(5)
+                        }
+                        .padding(5)
                     }.frame(width: 84, height: 60)
                         .foregroundStyle(Color.white)
+                    
                     ZStack {
                         Rectangle()
                             .cornerRadius(5)
                             .foregroundColor(CustomColor.Gray1)
+                        
                         VStack {
                             Image(systemName: "envelope.fill")
+                                .accessibilityHidden(true)
                             Button("mail") {}
-                        }.padding(5)
-                    }.frame(width: 84, height: 60)
-                        .foregroundStyle(Color.white)
+                        }
+                        .padding(5)
+                    }
+                    .frame(width: 84, height: 60)
+                    .foregroundStyle(Color.white)
                 }
                 .padding(.bottom, 15)
             }
@@ -86,6 +106,7 @@ struct ContactView: View {
             Section {
                 HStack {
                     Image(systemName: "person.fill")
+                        .accessibilityHidden(true)
                         .padding(.leading, 5)
                         .frame(width: 10, height: 10)
                     Text("Contact Photo & Poster")
@@ -116,8 +137,9 @@ struct ContactView: View {
                         Image(systemName: "phone.fill")
                             .foregroundColor(.blue)
                     }
-                }.padding(.top, 4)
-                    .padding(.bottom, 4)
+                }
+                .padding(.top, 3)
+                .padding(.bottom, 3)
             }
             Section {
                 Text("Notes")
