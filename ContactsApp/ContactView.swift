@@ -35,6 +35,7 @@ struct ContactView: View {
                     .font(.largeTitle)
                     .foregroundStyle(.white)
                     .bold()
+                    .multilineTextAlignment(.center)
                 
                 HStack {
                     
