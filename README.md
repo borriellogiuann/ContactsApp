@@ -1,7 +1,7 @@
 # ContactsApp
 
 ## Description
-This is a Contacts application developed in SwiftUI and using SwiftData. The application allows users to view a list of contacts, add new contacts, and remove them. Additionally, it provides the ability to view contact details on a separate screen.
+This Contacts application, inspired by Apple's Contacts app, is developed in SwiftUI and utilizes SwiftData. The application allows users to view a list of contacts, add new contacts, and remove them. Additionally, it provides the ability to view contact details on a separate screen.
 
 ## Features
 
