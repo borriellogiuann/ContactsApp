@@ -130,6 +130,7 @@ struct ContactView: View {
                             .frame(width: 35, height: 35)
                         Image(systemName: "video.fill")
                             .foregroundColor(.blue)
+                            .accessibilityLabel("facetime video call button")
                     }
                     ZStack {
                         Circle()
@@ -137,6 +138,7 @@ struct ContactView: View {
                             .frame(width: 35, height: 35)
                         Image(systemName: "phone.fill")
                             .foregroundColor(.blue)
+                            .accessibilityLabel("facetime audio call button")
                     }
                 }
                 .padding(.top, 3)

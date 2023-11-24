@@ -47,12 +47,10 @@ struct ContentView: View {
                             Text("Giovanni Borriello")
                                 .font(.title3)
                                 .fontWeight(.semibold)
-                                .foregroundStyle(.white)
                                 .bold()
                             Text("My Card")
                                 .fontWeight(.regular)
                                 .font(.callout)
-                                .foregroundColor(Color(red: 0.357, green: 0.357, blue: 0.357))
                                 .multilineTextAlignment(.leading)
                         }
                         .padding()
@@ -66,7 +64,7 @@ struct ContentView: View {
                     Button(action: {
                         isModalPresented.toggle()
                     }) {
-                        Label("Add Item", systemImage: "plus")
+                        Label("Add Contact", systemImage: "plus")
                     }.sheet(isPresented: $isModalPresented) {
                         ModalView(isPresented: $isModalPresented)
                     }
